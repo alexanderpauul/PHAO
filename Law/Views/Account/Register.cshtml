@@ -1,0 +1,109 @@
+﻿@model Law.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+<div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar d-none d-md-block">
+            <form class="bd-search d-flex align-items-center">
+                <input class="form-control ds-input"
+                       id="search-input"
+                       placeholder="Buscar..."
+                       autocomplete="off"
+                       spellcheck="false"
+                       aria-autocomplete="list"
+                       aria-expanded="false"
+                       style="position: relative; vertical-align: top;"
+                       dir="auto"
+                       type="search">
+            </form>
+
+            <nav class="collapse bd-links" id="bd-docs-nav">
+                @Html.Partial("_MenuControlPanelPartial")
+            </nav>
+        </div>
+
+
+        <main class="col-12 col-md-9 col-xl-8 py-3 pl-md-5 bd-content" role="main">
+            <h2 id="important-globals">
+                <!--
+                    Registrar usuario
+                -->
+            </h2>
+            <p class="">
+                Para acceder al consola de PHAO, debes tener una cuenta de correo electrónico.
+                Utilizando tu direccion de correo electrónico y una contraseña para este consola podras entrar.
+                Es importante tener encuenta no utilizar la misma clave que ya utilizas en otros sistema.
+            </p>
+            <!--
+            <p class="">
+                Para acceder al administrador de PHAO, debes tener una cuenta de Microsoft, Google o empresarial.
+                Utilizando tu direccion de correo y una contraseña para este consola podras entrar.
+                Es importante tener encuenta no utilizar la misma clave que ya utilizas en otros sistema.
+                También puedes registrar un usuario enviando una invitacion <a href="@Url.Action("Invitation")"> enviar invitacion</a> o un enlace <a href="#">crear enlace</a>.
+            </p>
+            -->
+
+            <div class="col-12 col-lg-10 col-xl-6 border shadow-sm px-0">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h5 class="p-4 m-0" style="background-color: #faf5f2;">Formulario de Registro.</h5>
+                    <hr class="m-0" />
+
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                    <div class="p-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Nombre)
+                                    @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.PrimerApellido)
+                                    @Html.TextBoxFor(m => m.PrimerApellido, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email)
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Password)
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.ConfirmPassword)
+                                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 px-0 pt-3">
+                                <input type="submit" class="btn" style="background-color: #664a46;color: #FFF;" value="Registrar" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+
+        </main>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

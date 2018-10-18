@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="description" content="Buscador de Leyes">
+    <meta name="author" content="Alexander Paulino">
+    <link rel="icon" href="~/favicon.ico">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
+
+</head>
+<body>
+    <header class="navbar sticky-top navbar-dark navbar-expand flex-column flex-md-row " style="background-color: #664a46;">
+        <a class="navbar-brand mr-0 mr-md-5" href="/" aria-label="Alexander Osoría Paulino Henríquez">
+            <svg width="70" height="36" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+                <g>
+                    <title>background</title>
+                    <rect x="-1" y="-1" width="72" height="38" id="canvas_background" fill="none" />
+                    <g id="canvasGrid" display="none">
+                        <rect id="svg_2" width="100%" height="100%" x="0" y="0" stroke-width="0" fill="url(#gridpattern)" />
+                    </g>
+                </g>
+                <g>
+                    <title>Layer 1</title>
+                    <text fill="#dddddd" stroke="#000" stroke-width="0" x="0.330204" y="26.5" id="svg_1" font-size="24" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" font-weight="bold">PHAO</text>
+                </g>
+            </svg>
+        </a>
+
+        <div class="navbar-nav-scroll">
+            <ul class="navbar-nav bd-navbar-nav flex-row">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Tablero</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Organismos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Equipos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/">Proyectos</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <a class="btn btn-round shadow-sm text-body py-2 px-3 d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="#" style="z-index: 99; background-color: #f3eed9 !important;">
+            Nuevo Proyecto +
+        </a>
+
+        <div class="flex-row ml-md-auto d-none d-md-flex h-100" style="background-color: #664a46;">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white py-2 px-3" href="#" target="_blank" rel="noopener" aria-label="Notifications">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white py-2 px-3" href="#" target="_blank" rel="noopener" aria-label="Calendar">
+                        <i class="fas fa-calendar-alt"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white py-2 px-3" href="#" target="_blank" rel="noopener" aria-label="Editor">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white py-2 px-3" href="#" target="_blank" rel="noopener" aria-label="User">
+                        <i class="fas fa-user-alt"></i>
+                    </a>
+                </li>
+            </ul>
+            <a class="btn btn btn-outline-light btn-round px-4 d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="#" style="border-width: 2px;font-weight: 600;">
+                Salir <i class="fas fa-sign-out-alt ml-lg-2"></i>
+            </a>
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <div class="navbar navbar-dark bg-dark navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("PHAO", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    -->
+
+
+
+    @RenderBody()
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

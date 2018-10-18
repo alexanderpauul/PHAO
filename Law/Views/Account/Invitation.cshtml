@@ -1,0 +1,108 @@
+﻿@model Law.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+<div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+            <form class="bd-search d-flex align-items-center">
+                <input class="form-control ds-input"
+                       id="search-input"
+                       placeholder="Buscar..."
+                       autocomplete="off"
+                       spellcheck="false"
+                       aria-autocomplete="list"
+                       aria-expanded="false"
+                       style="position: relative; vertical-align: top;"
+                       dir="auto"
+                       type="search">
+            </form>
+
+            <nav class="collapse bd-links" id="bd-docs-nav">
+                <div class="bd-toc-item active">
+                    <a class="bd-toc-link" href="#">
+                        Empezando
+                    </a>
+
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-truncate" href="#">Biblioteca</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-truncate" href="#">Base de conocimientos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-truncate" href="#">Mapa del sitio</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bd-toc-item active">
+                    <a class="bd-toc-link" href="#">PHAO</a>
+
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-truncate" href="#">Organismos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-truncate" href="#">Mantenimientos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-truncate" href="#">Panel de control</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-truncate" href="#">Buscador</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </nav>
+
+        </div>
+
+
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+            <h2 id="important-globals">
+                <!-- Invitación -->
+            </h2>
+
+            <p class="">
+                Para invitar al administrador de PHAO, debes tener una cuenta de Microsoft, Google o empresarial de la persona que quieres agregar. <br />
+                También puedes invitar mediante enlace <a href="#">crear enlace</a>.
+            </p>
+
+            <div class="col-lg-4 border shadow-sm px-0">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h5 class="p-3 m-0" style="background-color: #faf5f2;">Invitación.</h5>
+                    <hr class="m-0" />
+
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                    <div class="py-3">
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Correo electrónico" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" class="btn" style="background-color: #664a46;color: #FFF;" value="Enviar Invitación" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </main>
+    </div>
+    <!--
+
+        -->
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

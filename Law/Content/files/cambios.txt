@@ -1,0 +1,7 @@
+﻿https://www.tutorialspoint.com/tutorialslibrary.htm
+
+Para acceder al administrador de PHAO, debes tener una cuenta de Microsoft, Google o empresarial.
+Utilizando tu direccion de correo y una contraseña para este consola podras entrar.
+Es importante tener encuenta no utilizar la misma clave que ya utilizas en otros sistema.
+
+También puedes registrar un usuario enviando una invitacion <a href="@Url.Action("Invitation")"> enviar invitacion</a> o un enlace <a href="#">crear enlace</a>.

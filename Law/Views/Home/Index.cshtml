@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!-- Page Content -->
+<div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+            <form class="bd-search d-flex align-items-center">
+                <input class="form-control ds-input"
+                       id="search-input"
+                       placeholder="Buscar..."
+                       autocomplete="off"
+                       spellcheck="false"
+                       aria-autocomplete="list"
+                       aria-expanded="false"
+                       style="position: relative; vertical-align: top;"
+                       dir="auto"
+                       type="search">
+            </form>
+
+            <nav class="collapse bd-links" id="bd-docs-nav">
+                <div id="DivMenuManager">
+                    @{
+                        Html.RenderAction("Menu", new { menu = "_MenuMainPartial" });
+                    }
+                </div>
+            </nav>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,135 @@
+﻿@model IEnumerable<Law.Models.TOrganismo>
+@using System;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar d-none d-md-block">
+            <form class="bd-search d-flex align-items-center">
+                <input class="form-control ds-input"
+                       id="search-input"
+                       placeholder="Buscar..."
+                       autocomplete="off"
+                       spellcheck="false"
+                       aria-autocomplete="list"
+                       aria-expanded="false"
+                       style="position: relative; vertical-align: top;"
+                       dir="auto"
+                       type="search">
+            </form>
+
+            <nav class="collapse bd-links" id="bd-docs-nav">
+                @Html.Partial("_MenuControlPanelPartial")
+            </nav>
+        </div>
+
+        <main class="col-12 col-md-9 col-xl-8  bd-content" role="main">
+            <div class="row p-3">
+                @Html.Partial("_MenuCRUDPartial")
+            </div>
+
+            <div class="pt-5 pb-3">
+                <h2 id="important-globals">
+                    <!-- Tipos de Organismos -->
+
+                </h2>
+                <hr class="m-0" />
+
+                @{ int index = 0; }
+                @foreach (var item in Model)
+                {
+                    index++;
+                    <div class="d-flex align-content-center flex-wrap mb-1 rounded-0 border-bottom">
+
+                        @*<div class="col-1 p-2 align-self-center">
+                                <i class="fas fa-file-alt text-danger"></i>
+                            </div>*@
+                        <div class="col-lg-1 p-2 align-self-center">
+                            <!-- <small class="text-muted"># Solicitud</small> -->
+                            <a href="#" class="text-muted text-truncate mb-0">
+                                <span>@index.ToString().PadLeft(4, '0')</span>
+
+                            </a>
+                        </div>
+                        <div class="col-lg-4 p-2 align-self-center">
+                            <!-- <small class="text-muted">Solicitante</small> -->
+                            <p class="text-primary text-truncate mb-0">
+                                @Html.DisplayFor(modelItem => item.DscTOrganismo)
+                            </p>
+                        </div>
+                        <div class="col-lg-2 p-2 align-self-center">
+                            <p class="text-muted text-truncate mb-0">
+                                @Html.DisplayFor(modelItem => item.Registro)
+                            </p>
+                        </div>
+                        <div class="col-lg-1 p-2 align-self-center">
+                            <!-- <small class="text-muted">Estado</small> -->
+                            <p class="text-muted text-truncate mb-0">
+                                @Html.DisplayFor(modelItem => item.Estado.DscEstado)
+                            </p>
+                        </div>
+                        <div class="col-lg-1 p-2 align-self-center d-md-none d-lg-block">
+                            <!-- <small class="text-muted">Días</small> -->
+                            <p class="text-muted text-truncate mb-0">
+                                @Html.DisplayFor(modelItem => item.UserId)
+                            </p>
+                        </div>
+
+                        <div class="col p-2 p-lg-1 d-flex justify-content-end align-self-center">
+                            <a class="btn mr-1" role="button">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a class="btn mr-1" role="button">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a class="btn mr-1" role="button">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </div>
+
+
+                    </div>
+                }
+
+            </div>
+        </main>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<!--
+
+     <table>
+                    <tr class="py-3">
+                        <th>@Html.DisplayNameFor(model => model.DscTOrganismo)</th>
+                        <th>@Html.DisplayNameFor(model => model.Estado.DscEstado)</th>
+                        <th>@Html.DisplayNameFor(model => model.UserId)</th>
+                        <th>@Html.DisplayNameFor(model => model.Registro)</th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.DscTOrganismo)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Estado.DscEstado)</td>
+                            <td>@Html.DisplayFor(modelItem => item.UserId)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Registro)</td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.TOrganismoId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.TOrganismoId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.TOrganismoId })
+                            </td>
+                        </tr>
+                    }
+                </table>
+
+-->
