@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Law.Models.Organismo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .table thead th {
+        border-bottom: 0px;
+    }
+
+    .table tbody td {
+        font-size: 15px;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar d-none d-md-block">
+            <form class="bd-search d-flex align-items-center">
+                <input class="form-control ds-input"
+                       id="search-input"
+                       placeholder="Buscar..."
+                       autocomplete="off"
+                       spellcheck="false"
+                       aria-autocomplete="list"
+                       aria-expanded="false"
+                       style="position: relative; vertical-align: top;"
+                       dir="auto"
+                       type="search">
+            </form>
+
+            <nav class="collapse bd-links" id="bd-docs-nav">
+                @Html.Partial("_MenuControlPanelPartial")
+            </nav>
+        </div>
+
+        <main class="col-12 col-md-9 col-xl-8  bd-content" role="main">
+            <div class="row p-3">
+                @Html.Partial("_MenuCRUDPartial")
+            </div>
+
+            <div class="pt-5 pb-3">
+                <h5 id="important-globals">
+                   Organismos
+                </h5>
+
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Estado.DscEstado)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TOrganismo.DscTOrganismo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DscOrganismo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Sigla)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.URL)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.UserId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Registro)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Modificacion)
+                            </th>
+         
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estado.DscEstado)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TOrganismo.DscTOrganismo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DscOrganismo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Sigla)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.URL)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Registro)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Modificacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Identificador)
+                            </td>
+                            <td class="text-center">
+                                @Html.ActionLink("Editar", "Edit", new { id = item.OrganismoId }, htmlAttributes: new { @class = "badge badge-light" }) |
+                                @Html.ActionLink("Detalles", "Details", new { id = item.OrganismoId }, htmlAttributes: new { @class = "badge badge-info" }) |
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.OrganismoId }, htmlAttributes: new { @class = "badge badge-danger" })
+                            </td>
+
+                        </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

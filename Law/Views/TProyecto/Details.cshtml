@@ -1,0 +1,67 @@
+﻿@model Law.Models.TProyecto
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TProyecto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.DscEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.DscEstado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DscTNorma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DscTNorma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Registro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Registro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificador)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TNormaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

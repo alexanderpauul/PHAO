@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Law.Models.Estado>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TEstado.DscTEstado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DscEstado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Habilitado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Registro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Identificador)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEstado.DscTEstado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DscEstado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Habilitado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Registro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Identificador)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EstadoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EstadoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EstadoId })
+        </td>
+    </tr>
+}
+
+</table>

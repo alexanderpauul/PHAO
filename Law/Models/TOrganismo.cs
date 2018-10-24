@@ -20,7 +20,7 @@
         [HiddenInput()]
         public int TOrganismoId { get; set; }
 
-        [Display(Name = "Tipo Organismo")]
+        [Display(Name = "Tipo")]
         [Required(ErrorMessage = "El campo {0} es requerido.")]
         [StringLength(maximumLength: 50, MinimumLength = 1, ErrorMessage = "El campo {0} debe contener entre {1} y {2} caracteres.")]
         public string DscTOrganismo { get; set; }
@@ -30,12 +30,12 @@
         [HiddenInput()]
         public string UserId { get; set; }
 
-        [Display(Name = "Fecha Registro")]
+        [Display(Name = "Registro")]
         [HiddenInput()]
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? Registro { get; set; }
 
-        [Display(Name = "Fecha Modificación")]
+        [Display(Name = "Modificación")]
         [HiddenInput()]
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy hh:mm:ss tt}", ApplyFormatInEditMode = true)]
         public DateTime? Modificacion { get; set; }

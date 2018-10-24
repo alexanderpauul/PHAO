@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Law.Models.Pais>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ISO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DscPais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Registro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Identificador)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DscPais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Registro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Identificador)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PaisId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PaisId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PaisId })
+        </td>
+    </tr>
+}
+
+</table>

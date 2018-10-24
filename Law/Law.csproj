@@ -191,9 +191,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CPanelController.cs" />
+    <Compile Include="Controllers\EstadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrganismoController.cs" />
+    <Compile Include="Controllers\PaisController.cs" />
+    <Compile Include="Controllers\TEstadoController.cs" />
     <Compile Include="Controllers\TOrganismoController.cs" />
+    <Compile Include="Controllers\TProyectoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -328,6 +333,31 @@
     <Content Include="Views\TOrganismo\Edit.cshtml" />
     <Content Include="Views\TOrganismo\Index.cshtml" />
     <Content Include="Views\Shared\_MenuCRUDPartial.cshtml" />
+    <Content Include="Views\Organismo\Create.cshtml" />
+    <Content Include="Views\Organismo\Delete.cshtml" />
+    <Content Include="Views\Organismo\Details.cshtml" />
+    <Content Include="Views\Organismo\Edit.cshtml" />
+    <Content Include="Views\Organismo\Index.cshtml" />
+    <Content Include="Views\TEstado\Create.cshtml" />
+    <Content Include="Views\TEstado\Delete.cshtml" />
+    <Content Include="Views\TEstado\Details.cshtml" />
+    <Content Include="Views\TEstado\Edit.cshtml" />
+    <Content Include="Views\TEstado\Index.cshtml" />
+    <Content Include="Views\Estado\Create.cshtml" />
+    <Content Include="Views\Estado\Delete.cshtml" />
+    <Content Include="Views\Estado\Details.cshtml" />
+    <Content Include="Views\Estado\Edit.cshtml" />
+    <Content Include="Views\Estado\Index.cshtml" />
+    <Content Include="Views\Pais\Create.cshtml" />
+    <Content Include="Views\Pais\Delete.cshtml" />
+    <Content Include="Views\Pais\Details.cshtml" />
+    <Content Include="Views\Pais\Edit.cshtml" />
+    <Content Include="Views\Pais\Index.cshtml" />
+    <Content Include="Views\TProyecto\Create.cshtml" />
+    <Content Include="Views\TProyecto\Delete.cshtml" />
+    <Content Include="Views\TProyecto\Details.cshtml" />
+    <Content Include="Views\TProyecto\Edit.cshtml" />
+    <Content Include="Views\TProyecto\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

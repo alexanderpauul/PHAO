@@ -38,12 +38,12 @@
         [HiddenInput()]
         public string UserId { get; set; }
 
-        [Display(Name = "Fecha Registro")]
+        [Display(Name = "Registro")]
         [HiddenInput()]
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? Registro { get; set; }
 
-        [Display(Name = "Fecha Modificación")]
+        [Display(Name = "Modificación")]
         [HiddenInput()]
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy hh:mm:ss tt}", ApplyFormatInEditMode = true)]
         public DateTime? Modificacion { get; set; }
