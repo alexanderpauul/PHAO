@@ -5,63 +5,97 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar d-none d-md-block">
+            <form class="bd-search d-flex align-items-center">
+                <input class="form-control ds-input"
+                       id="search-input"
+                       placeholder="Buscar..."
+                       autocomplete="off"
+                       spellcheck="false"
+                       aria-autocomplete="list"
+                       aria-expanded="false"
+                       style="position: relative; vertical-align: top;"
+                       dir="auto"
+                       type="search">
+            </form>
 
-<div>
-    <h4>TOrganismo</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado.DscEstado)
-        </dt>
+            <nav class="collapse bd-links" id="bd-docs-nav">
+                @Html.Partial("_MenuControlPanelPartial")
+            </nav>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Estado.DscEstado)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DscTOrganismo)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DscTOrganismo)
-        </dd>
+        <main class="col-12 col-md-9 col-xl-8 py-3 pl-md-5 bd-content" role="main">
+            <h2 id="important-globals">
+                Tipos de Organismos
+            </h2>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserId)
-        </dt>
+            <p class="">
+                Los Tipos de Organismo son una clasificacion administrativa de las instituciones del estado.
+                Estos sirven para indicar el nivel de las instituciones que velan por el cumplimiento de las leyes.
+            </p>
 
-        <dd>
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
+            <div class="col-12 col-lg-10 col-xl-7 px-0 py-5">
+                <dl class="row mx-0">
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.Estado.DscEstado)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Registro)
-        </dt>
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.Estado.DscEstado)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Registro)
-        </dd>
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.DscTOrganismo)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Modificacion)
-        </dt>
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.DscTOrganismo)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Modificacion)
-        </dd>
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.UserId)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Identificador)
-        </dt>
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.UserId)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Identificador)
-        </dd>
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.Registro)
+                    </dt>
 
-    </dl>
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.Registro)
+                    </dd>
+
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.Modificacion)
+                    </dt>
+
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.Modificacion)
+                    </dd>
+
+                    <dt class="col-3 py-2 border border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.Identificador)
+                    </dt>
+
+                    <dd class="col-9 py-2 border my-0">
+                        @Html.DisplayFor(model => model.Identificador)
+                    </dd>
+                </dl>
+
+                <p>
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.TOrganismoId }, htmlAttributes: new { @class = "btn", @style = "background-color: #664a46;color: #FFF;" })
+                    @Html.ActionLink("Regresar", "Index", null, htmlAttributes: new { @class = "btn btn-light" })
+                </p>
+            </div>
+        </main>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TOrganismoId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+

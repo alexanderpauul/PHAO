@@ -27,7 +27,7 @@
         public string DscTEstado { get; set; }
 
         [Display(Name = "Habilitado")]
-        public bool? Habilitado { get; set; }
+        public bool Habilitado { get; set; }
 
         [Display(Name = "Usuario")]
         [DisplayFormat(NullDisplayText = "N/D", ApplyFormatInEditMode = true)]

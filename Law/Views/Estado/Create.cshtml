@@ -5,85 +5,76 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar d-none d-md-block">
+            <form class="bd-search d-flex align-items-center">
+                <input class="form-control ds-input"
+                       id="search-input"
+                       placeholder="Buscar..."
+                       autocomplete="off"
+                       spellcheck="false"
+                       aria-autocomplete="list"
+                       aria-expanded="false"
+                       style="position: relative; vertical-align: top;"
+                       dir="auto"
+                       type="search">
+            </form>
 
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Estado</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.TEstadoId, "TEstadoId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("TEstadoId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.TEstadoId, "", new { @class = "text-danger" })
-            </div>
+            <nav class="collapse bd-links" id="bd-docs-nav">
+                @Html.Partial("_MenuControlPanelPartial")
+            </nav>
         </div>
+        
+        <main class="col-12 col-md-9 col-xl-8 py-3 pl-md-5 bd-content" role="main">
+            <h2 id="important-globals">Estado</h2>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DscEstado, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DscEstado, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DscEstado, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            <div class="col-12 col-lg-10 col-xl-7 px-0 py-5">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Habilitado, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Habilitado)
-                    @Html.ValidationMessageFor(model => model.Habilitado, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.TEstadoId, "Tipo de Estado", htmlAttributes: new { @class = "control-label col-sm-2 col-xl-3" })
+                        <div class="col-sm-10 col-xl-9">
+                            @Html.DropDownList("TEstadoId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.TEstadoId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.DscEstado, htmlAttributes: new { @class = "control-label col-sm-2 col-xl-3" })
+                        <div class="col-sm-10 col-xl-9">
+                            @Html.EditorFor(model => model.DscEstado, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.DscEstado, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Registro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Registro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Registro, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="control-label col-sm-2 col-xl-3"></label>
+                        <div class="col-sm-10 col-xl-9">
+                            <div class="custom-control custom-checkbox">
+                                @Html.CheckBoxFor(model => model.Habilitado, htmlAttributes: new { @class = "custom-control-input" })
+                                @Html.LabelFor(model => model.Habilitado, htmlAttributes: new { @class = "custom-control-label" })
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Modificacion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Modificacion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Modificacion, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4 col-sm-offset-2 ">
+                                <input type="submit" value="Guardar" class="btn" style="background-color: #664a46;color: #FFF;" />
+                                <a role="button" href="@Url.Action("Index")" class="btn btn-danger">Cancelar</a>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Identificador, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Identificador, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Identificador, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                }
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
             </div>
-        </div>
+        </main>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
 
 @section Scripts {

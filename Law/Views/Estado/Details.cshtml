@@ -5,71 +5,95 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar d-none d-md-block">
+            <form class="bd-search d-flex align-items-center">
+                <input class="form-control ds-input"
+                       id="search-input"
+                       placeholder="Buscar..."
+                       autocomplete="off"
+                       spellcheck="false"
+                       aria-autocomplete="list"
+                       aria-expanded="false"
+                       style="position: relative; vertical-align: top;"
+                       dir="auto"
+                       type="search">
+            </form>
 
-<div>
-    <h4>Estado</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TEstado.DscTEstado)
-        </dt>
+            <nav class="collapse bd-links" id="bd-docs-nav">
+                @Html.Partial("_MenuControlPanelPartial")
+            </nav>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.TEstado.DscTEstado)
-        </dd>
+        <main class="col-12 col-md-9 col-xl-8 py-3 pl-md-5 bd-content" role="main">
+            <h2 id="important-globals">
+                Estado
+            </h2>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DscEstado)
-        </dt>
+            <div class="col-12 col-lg-10 col-xl-7 px-0 py-5">
+                <dl class="row mx-0">
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.TEstado.DscTEstado)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DscEstado)
-        </dd>
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.TEstado.DscTEstado)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Habilitado)
-        </dt>
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.DscEstado)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Habilitado)
-        </dd>
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.DscEstado)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserId)
-        </dt>
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.Habilitado)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.Habilitado)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Registro)
-        </dt>
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.UserId)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Registro)
-        </dd>
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.UserId)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Modificacion)
-        </dt>
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.Registro)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Modificacion)
-        </dd>
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.Registro)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Identificador)
-        </dt>
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.Modificacion)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Identificador)
-        </dd>
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.Modificacion)
+                    </dd>
 
-    </dl>
+                    <dt class="col-3 py-2 border border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.Identificador)
+                    </dt>
+
+                    <dd class="col-9 py-2 border my-0">
+                        @Html.DisplayFor(model => model.Identificador)
+                    </dd>
+                </dl>
+                <p>
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.EstadoId }, htmlAttributes: new { @class = "btn", @style = "background-color: #664a46;color: #FFF;" })
+                    @Html.ActionLink("Regresar", "Index", null, htmlAttributes: new { @class = "btn btn-light" })
+                </p>
+            </div>
+        </main>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.EstadoId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
