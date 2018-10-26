@@ -1,4 +1,11 @@
 ﻿<div class="bd-toc-item active">
+    @Ajax.ActionLink("PHAO", "Menu", "Home", new { @menu = "_MenuMainPartial" }, new AjaxOptions
+    {
+        HttpMethod = "GET",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = ("DivMenuManager")
+    }, new { @class = "bd-toc-link text-truncate" })
+
     <a class="bd-toc-link" href="#">
         Panel de control
     </a>

@@ -170,3 +170,50 @@ th, td {
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
+
+
+.btn-outline-toolbar {
+    color: #664a46;
+    background-color: #FFFFFF;
+    border-color: #664A46;
+}
+
+    .btn-outline-toolbar:hover,
+    .btn-outline-toolbar:focus,
+    .btn-outline-toolbar:active,
+    .btn-outline-toolbar.active,
+    .open .dropdown-toggle.btn-outline-toolbar {
+        color: #FFFFFF;
+        background-color: #7b5b57;
+        border-color: #7b5b57;
+    }
+
+    .btn-outline-toolbar:active,
+    .btn-outline-toolbar.active,
+    .open .dropdown-toggle.btn-outline-toolbar {
+        background-image: none;
+    }
+
+    .btn-outline-toolbar.disabled,
+    .btn-outline-toolbar[disabled],
+    fieldset[disabled] .btn-outline-toolbar,
+    .btn-outline-toolbar.disabled:hover,
+    .btn-outline-toolbar[disabled]:hover,
+    fieldset[disabled] .btn-outline-toolbar:hover,
+    .btn-outline-toolbar.disabled:focus,
+    .btn-outline-toolbar[disabled]:focus,
+    fieldset[disabled] .btn-outline-toolbar:focus,
+    .btn-outline-toolbar.disabled:active,
+    .btn-outline-toolbar[disabled]:active,
+    fieldset[disabled] .btn-outline-toolbar:active,
+    .btn-outline-toolbar.disabled.active,
+    .btn-outline-toolbar[disabled].active,
+    fieldset[disabled] .btn-outline-toolbar.active {
+        background-color: #FFFFFF;
+        border-color: #664A46;
+    }
+
+    .btn-outline-toolbar .badge {
+        color: #FFFFFF;
+        background-color: #664a46;
+    }

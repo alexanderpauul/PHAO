@@ -22,7 +22,9 @@
             </form>
 
             <nav class="collapse bd-links" id="bd-docs-nav">
-                @Html.Partial("_MenuControlPanelPartial")
+                <div id="DivMenuManager">
+                    @Html.Partial("_MenuControlPanelPartial")
+                </div>
             </nav>
         </div>
 
@@ -33,6 +35,7 @@
 
             <p class="">
                 Los Organismo son las instituciones que velan por el cumplimiento de las leyes.
+                <span class="text-danger d-block">¿Esta seguro que quieres eliminar este registro?</span>
             </p>
 
             <div class="col-12 col-lg-10 col-xl-7 px-0 py-5">

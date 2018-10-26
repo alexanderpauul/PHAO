@@ -14,6 +14,12 @@
     .table tbody td {
         font-size: 15px;
     }
+
+    .table tbody th, .table td {
+        padding: 0.45rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
 </style>
 
 <div class="container-fluid">
@@ -33,7 +39,9 @@
             </form>
 
             <nav class="collapse bd-links" id="bd-docs-nav">
-                @Html.Partial("_MenuControlPanelPartial")
+                <div id="DivMenuManager">
+                    @Html.Partial("_MenuControlPanelPartial")
+                </div>
             </nav>
         </div>
 
@@ -43,21 +51,16 @@
             </div>
 
             <div class="pt-5 pb-3">
-                <h5 id="important-globals">
-                     Tipos de Organismos 
-                </h5>
-
-
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
+                <div class="table-responsive table-responsive border-left border-right rounded">
+                    <table class="table table-hover m-0">
+                        <thead class="thead-light">
                             <tr>
-                                <th class="">#</th>
-                                <th class="">@Html.DisplayNameFor(model => model.DscTOrganismo)</th>
-                                <th class="">@Html.DisplayNameFor(model => model.Estado.DscEstado)</th>
-                                <th class="">@Html.DisplayNameFor(model => model.UserId)</th>
-                                <th class="">@Html.DisplayNameFor(model => model.Registro)</th>
-                                <th class=""></th>
+                                <th scope="col">#</th>
+                                <th scope="col">@Html.DisplayNameFor(model => model.DscTOrganismo)</th>
+                                <th scope="col">@Html.DisplayNameFor(model => model.Estado.DscEstado)</th>
+                                <th scope="col">@Html.DisplayNameFor(model => model.UserId)</th>
+                                <th scope="col">@Html.DisplayNameFor(model => model.Registro)</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -67,12 +70,12 @@
                                 index++;
 
                                 <tr>
-                                    <td>@index.ToString().PadLeft(4, '0')</td>
+                                    <th scope="row">@index.ToString().PadLeft(4, '0')</th>
                                     <td>@Html.DisplayFor(modelItem => item.DscTOrganismo)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Estado.DscEstado)</td>
                                     <td>@Html.DisplayFor(modelItem => item.UserId)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Registro)</td>
-                                    <td class="text-center">
+                                    <td class="text-right">
                                         @Html.ActionLink("Editar", "Edit", new { id = item.TOrganismoId }, htmlAttributes: new { @class = "badge badge-light" }) |
                                         @Html.ActionLink("Detalles", "Details", new { id = item.TOrganismoId }, htmlAttributes: new { @class = "badge badge-info" }) |
                                         @Html.ActionLink("Eliminar", "Delete", new { id = item.TOrganismoId }, htmlAttributes: new { @class = "badge badge-danger" })

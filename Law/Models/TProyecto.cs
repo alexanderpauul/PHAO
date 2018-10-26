@@ -23,7 +23,7 @@ namespace Law.Models
         [HiddenInput()]
         public int TNormaId { get; set; }
 
-        [Display(Name = "Tipo Norma")]
+        [Display(Name = "Tipo Proyecto")]
         [Required(ErrorMessage = "El campo {0} es requerido.")] 
         [StringLength(maximumLength: 50, MinimumLength = 1, ErrorMessage = "El campo {0} debe contener entre {1} y {2} caracteres.")]
         public string DscTNorma { get; set; }

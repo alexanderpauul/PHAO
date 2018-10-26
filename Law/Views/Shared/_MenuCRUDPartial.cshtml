@@ -1,11 +1,16 @@
-﻿<div class="nav-scroller bg-white  bg-light border-light">
+﻿@{
+    string name = (string)HttpContext.Current.Request.RequestContext.RouteData.Values["controller"];
+
+
+}
+<div class="nav-scroller bg-white  bg-light border-light">
     <nav class="nav nav-underline py-0" style="padding-top: 2px !important;">
-        <a class="nav-link btn-round mr-2 text-dark" href="@Url.Action("Create")" role="button" style="background-color: #f3eed9 !important;">Nuevo +</a>
-        <a class="nav-link btn-round mr-2 text-dark" href="@Url.Action("Index", "TOrganismo")" style="background-color: #e4f0ff !important; color: #FFF;">Tipos de Organismos</a>
-        <a class="nav-link btn-round mr-2 text-black-50" href="@Url.Action("Index", "Organismo")" style="background-color: #e4edf1 !important;">Organismos</a>
-        <a class="nav-link btn-round mr-2 text-black-50" href="@Url.Action("Index", "TEstado")" style="background-color: #e4edf1 !important;">Tipos de Estados</a>
-        <a class="nav-link btn-round mr-2 text-black-50" href="@Url.Action("Index", "Estado")" style="background-color: #e4edf1 !important;">Estados</a>
-        <a class="nav-link btn-round mr-2 text-black-50" href="@Url.Action("Index", "Pais")" style="background-color: #e4edf1 !important;">Países </a>
-        <a class="nav-link btn-round mr-2 text-black-50" href="@Url.Action("Index", "TProyecto")" style="background-color: #e4edf1 !important;">Tipos de Proyectos</a>
+        <a class="btn btn-outline-success mr-2" href="@Url.Action("Create")" role="button">Nuevo +</a>
+        @Html.ActionLink("Tipos de Organismos", "Index", "TOrganismo", null, htmlAttributes: new { @class = (name == "TOrganismo") ? "btn btn-outline-toolbar mr-2 active" : "btn btn-outline-toolbar mr-2 " })
+        @Html.ActionLink("Organismos", "Index", "Organismo", null, htmlAttributes: new { @class = (name == "Organismo") ? "btn btn-outline-toolbar mr-2 active" : "btn btn-outline-toolbar mr-2 " })
+        @Html.ActionLink("Tipos de Estados", "Index", "TEstado", null, htmlAttributes: new { @class = (name == "TEstado") ? "btn btn-outline-toolbar mr-2 active" : "btn btn-outline-toolbar mr-2 " })
+        @Html.ActionLink("Estados", "Index", "Estado", null, htmlAttributes: new { @class = (name == "Estado") ? "btn btn-outline-toolbar mr-2 active" : "btn btn-outline-toolbar mr-2 " })
+        @Html.ActionLink("Pais", "Index", "Pais", null, htmlAttributes: new { @class = (name == "Pais") ? "btn btn-outline-toolbar mr-2 active" : "btn btn-outline-toolbar mr-2 " })
+        @Html.ActionLink("Tipos de Proyectos", "Index", "TProyecto", null, htmlAttributes: new { @class = (name == "TProyecto") ? "btn btn-outline-toolbar mr-2 active" : "btn btn-outline-toolbar mr-2 " })
     </nav>
 </div>

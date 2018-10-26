@@ -5,69 +5,99 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar d-none d-md-block">
+            <form class="bd-search d-flex align-items-center">
+                <input class="form-control ds-input"
+                       id="search-input"
+                       placeholder="Buscar..."
+                       autocomplete="off"
+                       spellcheck="false"
+                       aria-autocomplete="list"
+                       aria-expanded="false"
+                       style="position: relative; vertical-align: top;"
+                       dir="auto"
+                       type="search">
+            </form>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>TProyecto</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado.DscEstado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Estado.DscEstado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DscTNorma)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DscTNorma)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Registro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Registro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Modificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Modificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Identificador)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Identificador)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <nav class="collapse bd-links" id="bd-docs-nav">
+                <div id="DivMenuManager">
+                    @Html.Partial("_MenuControlPanelPartial")
+                </div>
+            </nav>
         </div>
-    }
+
+        <main class="col-12 col-md-9 col-xl-8 py-3 pl-md-5 bd-content" role="main">
+            <h2 id="important-globals">Tipos de Proyectos</h2>
+            <p class="">
+                Los Tipos de Proyectos definen una clasificación de las normas en Leyes, Códigos, ect.
+                <span class="text-danger d-block">¿Esta seguro que quieres eliminar este registro?</span>
+            </p>
+
+            <div class="col-12 col-lg-10 col-xl-7 px-0 py-3">
+                <dl class="row mx-0">
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.Estado.DscEstado)
+                    </dt>
+
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.Estado.DscEstado)
+                    </dd>
+
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.DscTNorma)
+                    </dt>
+
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.DscTNorma)
+                    </dd>
+
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.UserId)
+                    </dt>
+
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.UserId)
+                    </dd>
+
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.Registro)
+                    </dt>
+
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.Registro)
+                    </dd>
+
+                    <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.Modificacion)
+                    </dt>
+
+                    <dd class="col-9 py-2 border border-bottom-0 my-0">
+                        @Html.DisplayFor(model => model.Modificacion)
+                    </dd>
+
+                    <dt class="col-3 py-2 border border-right-0 bg-light">
+                        @Html.DisplayNameFor(model => model.Identificador)
+                    </dt>
+
+                    <dd class="col-9 py-2 border my-0">
+                        @Html.DisplayFor(model => model.Identificador)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Eliminar" class="btn btn-danger" />
+                        @Html.ActionLink("Regresar", "Index", null, htmlAttributes: new { @class = "btn btn-light" })
+                    </div>
+                }
+            </div>
+        </main>
+    </div>
 </div>
+

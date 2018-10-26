@@ -22,7 +22,9 @@
             </form>
 
             <nav class="collapse bd-links" id="bd-docs-nav">
-                @Html.Partial("_MenuControlPanelPartial")
+                <div id="DivMenuManager">
+                    @Html.Partial("_MenuControlPanelPartial")
+                </div>
             </nav>
         </div>
 
@@ -31,7 +33,7 @@
                 Estado
             </h2>
 
-            <div class="col-12 col-lg-10 col-xl-7 px-0 py-5">
+            <div class="col-12 col-lg-10 col-xl-7 px-0 py-3">
                 <dl class="row mx-0">
                     <dt class="col-3 py-2 border border-bottom-0 border-right-0 bg-light">
                         @Html.DisplayNameFor(model => model.TEstado.DscTEstado)

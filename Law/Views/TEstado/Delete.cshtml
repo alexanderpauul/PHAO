@@ -22,16 +22,15 @@
             </form>
 
             <nav class="collapse bd-links" id="bd-docs-nav">
-                @Html.Partial("_MenuControlPanelPartial")
+                <div id="DivMenuManager">
+                    @Html.Partial("_MenuControlPanelPartial")
+                </div>
             </nav>
         </div>
 
-
-
         <main class="col-12 col-md-9 col-xl-8 py-3 pl-md-5 bd-content" role="main">
-            <h2 id="important-globals">
-                Tipos de Estados
-            </h2>
+            <h2 id="important-globals">Tipos de Estados</h2>
+            <p class="text-danger">¿Esta seguro que quieres eliminar este registro?</p>
 
             <div class="col-12 col-lg-10 col-xl-7 px-0 py-5">
                 <dl class="row mx-0">

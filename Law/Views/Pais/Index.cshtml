@@ -5,54 +5,101 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ISO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DscPais)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Registro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Modificacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Identificador)
-        </th>
-        <th></th>
-    </tr>
+<style>
+    .table thead th {
+        border-bottom: 0px;
+    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ISO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DscPais)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Registro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Modificacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Identificador)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PaisId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PaisId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PaisId })
-        </td>
-    </tr>
-}
+    .table tbody td {
+        font-size: 15px;
+    }
+</style>
 
-</table>
+<div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar d-none d-md-block">
+            <form class="bd-search d-flex align-items-center">
+                <input class="form-control ds-input"
+                       id="search-input"
+                       placeholder="Buscar..."
+                       autocomplete="off"
+                       spellcheck="false"
+                       aria-autocomplete="list"
+                       aria-expanded="false"
+                       style="position: relative; vertical-align: top;"
+                       dir="auto"
+                       type="search">
+            </form>
+
+            <nav class="collapse bd-links" id="bd-docs-nav">
+                <div id="DivMenuManager">
+                    @Html.Partial("_MenuControlPanelPartial")
+                </div>
+            </nav>
+        </div>
+
+        <main class="col-12 col-md-9 col-xl-8  bd-content" role="main">
+            <div class="row p-3">
+                @Html.Partial("_MenuCRUDPartial")
+            </div>
+
+            <div class="pt-5 pb-3">
+                <h5 id="important-globals">
+                    Tipos de Organismos
+                </h5>
+
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ISO)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DscPais)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Registro)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Modificacion)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Identificador)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ISO)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DscPais)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Registro)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Modificacion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Identificador)
+                                </td>
+                                <td class="text-center">
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.PaisId }, htmlAttributes: new { @class = "badge badge-light" }) |
+                                    @Html.ActionLink("Detalles", "Details", new { id = item.PaisId }, htmlAttributes: new { @class = "badge badge-info" }) |
+                                    @Html.ActionLink("Eliminar", "Delete", new { id = item.PaisId }, htmlAttributes: new { @class = "badge badge-danger" })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
